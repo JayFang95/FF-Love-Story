@@ -1,0 +1,33 @@
+# 服务端口
+server:
+  port: 8888
+# 服务应用名称
+spring:
+  application:
+    name: love-story-gateway
+  # nacos注册发现配置
+  cloud:
+    nacos:
+      discovery:
+        username: nacos
+        password: Dzkj_nacos
+        server-addr: 39.99.160.188:8848
+    # 网关路由配置
+    gateway:
+      routes:
+        - id: witness_router # 路由id 唯一
+          uri: lb://love-story-witness # 路由转发地址
+          predicates:
+            - Path: /love/witness # 路由断言路径
+        - id: journey_router # 路由id 唯一
+            uri: lb://love-story-journey # 路由转发地址
+            predicates:
+              - Path: /love/journey # 路由断言路径
+        - id: daily_router # 路由id 唯一
+            uri: lb://love-story-daily # 路由转发地址
+            predicates:
+              - Path: /love/daily # 路由断言路径
+        - id: friend_router # 路由id 唯一
+            uri: lb://love-story-friend # 路由转发地址
+            predicates:
+              - Path: /love/friend # 路由断言路径

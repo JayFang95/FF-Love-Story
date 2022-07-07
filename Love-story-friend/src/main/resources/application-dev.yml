@@ -1,0 +1,11 @@
+server:
+  port: 9004
+spring:
+  application:
+    name: love-story-friend
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 39.99.160.188:8848
+        username: nacos
+        password: Dzkj_nacos
