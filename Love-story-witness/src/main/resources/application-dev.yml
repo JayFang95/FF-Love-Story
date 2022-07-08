@@ -19,10 +19,16 @@ spring:
     url: jdbc:mysql://localhost:3306/love-story?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8&useSSL=false&nullCatalogMeansCurrent=true
     username: root
     password: root
-
+  # nacos 配置
   cloud:
     nacos:
       discovery:
         server-addr: 39.99.160.188:8848
         username: nacos
         password: Dzkj_nacos
+#日志配置
+logging:
+  level:
+    root: INFO
+    tk.mybatis: debug
+    com.jay.mapper: debug

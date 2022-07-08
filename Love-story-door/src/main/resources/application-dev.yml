@@ -15,19 +15,20 @@ spring:
     # 网关路由配置
     gateway:
       routes:
-        - id: witness_router # 路由id 唯一
-          uri: lb://love-story-witness # 路由转发地址
-          predicates:
-            - Path: /love/witness # 路由断言路径
-        - id: journey_router # 路由id 唯一
-            uri: lb://love-story-journey # 路由转发地址
-            predicates:
-              - Path: /love/journey # 路由断言路径
-        - id: daily_router # 路由id 唯一
-            uri: lb://love-story-daily # 路由转发地址
-            predicates:
-              - Path: /love/daily # 路由断言路径
-        - id: friend_router # 路由id 唯一
-            uri: lb://love-story-friend # 路由转发地址
-            predicates:
-              - Path: /love/friend # 路由断言路径
+        - id: witness_router #路由的唯一标识
+          uri: lb://love-story-witness # 需要转发的地址 使用nacos的负载均衡功能
+          predicates: # 断言规则，用于路由的怕匹配
+            - Path=/love/witness/**
+        - id: witness_router #路由的唯一标识
+          uri: lb://love-story-journey # 需要转发的地址 使用nacos的负载均衡功能
+          predicates: # 断言规则，用于路由的怕匹配
+            - Path=/love/journey/**
+        - id: witness_router #路由的唯一标识
+          uri: lb://love-story-daily # 需要转发的地址 使用nacos的负载均衡功能
+          predicates: # 断言规则，用于路由的怕匹配
+            - Path=/love/daily/**
+        - id: witness_router #路由的唯一标识
+          uri: lb://love-story-friend # 需要转发的地址 使用nacos的负载均衡功能
+          predicates: # 断言规则，用于路由的怕匹配
+            - Path=/love/friend/**
+

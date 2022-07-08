@@ -1,0 +1,14 @@
+#mybatis配置
+mybatis-plus:
+  mapper-locations: classpath:/mapper/*.xml
+  type-aliases-package: com.jay.entity.**
+  global-config:
+    db-config:
+      id-type: auto #主键类型  0:"数据库ID自增", 1:"用户输入ID",2:"全局唯一ID (数字类型唯一ID)", 3:"全局唯一ID UUID";
+  configuration:
+    # 驼峰下划线转换
+    map-underscore-to-camel-case: true
+    # 使用全局的映射器启用或者禁用缓存
+    cache-enabled: true
+    # 配置,但JDBC类型为空时,某些驱动程序 要指定值,default:OTHER，插入空值时不需要指定类型
+    jdbc-type-for-null: 'null'
