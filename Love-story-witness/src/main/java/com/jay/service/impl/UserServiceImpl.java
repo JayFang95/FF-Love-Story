@@ -1,6 +1,5 @@
 package com.jay.service.impl;
 
-import com.baomidou.mybatisplus.extension.service.IService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.jay.entity.User;
 import com.jay.mapper.UserMapper;
