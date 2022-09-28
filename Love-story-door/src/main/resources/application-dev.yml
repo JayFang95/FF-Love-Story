@@ -31,4 +31,3 @@ spring:
           uri: lb://love-story-friend # 需要转发的地址 使用nacos的负载均衡功能
           predicates: # 断言规则，用于路由的怕匹配
             - Path=/love/friend/**
-
